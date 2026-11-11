@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="Cổng nhập code và chuyển điểm LLwin.">
+    <title>LLwin - Nhập Code Khuyến Mãi</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="#" aria-label="LLwin Logo">
+          <img src="assets/imgcode/mainlogocode.png" alt="LLwin Logo">
+        </a>
+
+        <div class="header-actions">
+          <button class="sound-toggle" id="sound-toggle" type="button" aria-label="Bật âm thanh" aria-pressed="false">
+            <svg class="sound-icon sound-off" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M11 5 6 9H3v6h3l5 4V5Z"></path>
+              <path d="m17 9 4 6m0-6-4 6"></path>
+            </svg>
+            <svg class="sound-icon sound-on" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M11 5 6 9H3v6h3l5 4V5Z"></path>
+              <path d="M15.5 8.5a5 5 0 0 1 0 7m3-10a9 9 0 0 1 0 13"></path>
+            </svg>
+          </button>
+
+          <nav class="desktop-nav" aria-label="Điều hướng chính">
+            <a href="https://llwinquatang.com" aria-label="Quà tặng">
+              <img src="assets/imgcode/btnquatang.png" alt="Quà tặng">
+            </a>
+            <a href="https://llwincskh.com" aria-label="CSKH 24/7">
+              <img src="assets/imgcode/btncskh247.png" alt="CSKH 24/7">
+            </a>
+            <a href="https://888llwin.com" aria-label="Trang chủ">
+              <img src="assets/imgcode/btnindex.png" alt="Trang chủ">
+            </a>
+          </nav>
+
+          <a class="mobile-home" href="https://888llwin.com" aria-label="Trang chủ">
+            <img src="assets/imgcode/btnindex.png" alt="Trang chủ">
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="game-stage">
+      <picture class="stage-background">
+        <source media="(max-width: 767px)" srcset="assets/imgcode/bgmb.webp">
+        <img src="assets/imgcode/bgpc.webp" alt="">
+      </picture>
+
+      <nav class="mobile-nav" aria-label="Điều hướng nhanh">
+        <a href="https://llwinquatang.com" aria-label="Quà tặng">
+          <img src="assets/imgcode/btnquatangmobi.png" alt="Quà tặng">
+        </a>
+        <a href="https://llwincskh.com" aria-label="CSKH 24/7">
+          <img src="assets/imgcode/btncskh247mobi.png" alt="CSKH 24/7">
+        </a>
+      </nav>
+
+      <section class="main-content" aria-label="Chuyển điểm">
+        <section class="convert-card" aria-label="Chuyển điểm LLwin">
+          <header class="card-header">
+            <div class="brand-name">LLwin</div>
+            <img class="form-title" src="assets/imgcode/titlemain.png" alt="Cổng nhập code">
+          </header>
+
+          <form class="convert-form" id="convert-form" novalidate>
+            <div class="field-group">
+              <label for="username">TÊN TÀI KHOẢN</label>
+              <input id="username" name="username" type="text" autocomplete="username" placeholder="Nhập tên tài khoản" required>
+            </div>
+
+            <div class="field-group">
+              <label for="points">SỐ ĐIỂM</label>
+              <input id="points" name="points" type="text" inputmode="numeric" placeholder="Nhập số điểm" required>
+            </div>
+
+            <p class="form-message" id="form-message" role="alert" aria-live="polite"></p>
+            <button class="primary-button" type="submit">NHẬN CODE</button>
+          </form>
+        </section>
+      </section>
+
+      <aside class="promo-widgets" aria-label="Ưu đãi">
+        <div class="promo-widget promo-widget-left" id="widget-left">
+          <button class="widget-close" type="button" aria-label="Đóng ưu đãi giới thiệu">×</button>
+          <a href="https://llwinquatang.com" aria-label="Giới thiệu nhận thưởng">
+            <img src="assets/widget-left.gif" alt="Giới thiệu nhận thưởng">
+          </a>
+        </div>
+        <div class="promo-widget promo-widget-right" id="widget-right">
+          <button class="widget-close" type="button" aria-label="Đóng ưu đãi dự đoán">×</button>
+          <a href="https://llwinquatang.com" aria-label="Ưu đãi dự đoán">
+            <img src="assets/widget-right.gif" alt="Ưu đãi dự đoán">
+          </a>
+        </div>
+      </aside>
+    </main>
+
+    <audio id="background-audio" src="assets/audio.mp3" loop preload="none"></audio>
+  </body>
+</html>
