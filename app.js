@@ -1,12 +1,15 @@
 const form = document.querySelector("#convert-form");
 const usernameInput = document.querySelector("#username");
 const pointsInput = document.querySelector("#points");
+const humanCheck = document.querySelector("#human-check");
 const formMessage = document.querySelector("#form-message");
 const result = document.querySelector("#result");
 const resultTitle = document.querySelector("#result-title");
+const resultTime = document.querySelector("#result-time");
 const resultUsername = document.querySelector("#result-username");
 const resultPoints = document.querySelector("#result-points");
 const backButton = document.querySelector("#back-button");
+const convertCard = document.querySelector(".convert-card");
 const soundToggle = document.querySelector("#sound-toggle");
 const audio = document.querySelector("#background-audio");
 
@@ -36,16 +39,27 @@ form.addEventListener("submit", (event) => {
     return;
   }
 
+  if (!humanCheck.checked) {
+    showError("Vui lòng xác nhận bạn là người thật.");
+    humanCheck.focus();
+    return;
+  }
+
   resultUsername.textContent = username;
   resultPoints.textContent = points.toLocaleString("vi-VN");
+  const transferredAt = new Date();
+  resultTime.dateTime = transferredAt.toISOString();
+  resultTime.textContent = formatTransferTime(transferredAt);
   form.hidden = true;
   result.hidden = false;
+  convertCard.classList.add("is-success");
   resultTitle.focus();
 });
 
 backButton.addEventListener("click", () => {
   result.hidden = true;
   form.hidden = false;
+  convertCard.classList.remove("is-success");
   form.reset();
   usernameInput.focus();
 });
@@ -75,4 +89,12 @@ document.querySelectorAll(".widget-close").forEach((button) => {
 
 function showError(text) {
   formMessage.textContent = text;
+}
+
+function formatTransferTime(date) {
+  const pad = (value) => String(value).padStart(2, "0");
+  const time = `${pad(date.getHours())}:${pad(date.getMinutes())}:${pad(date.getSeconds())}`;
+  const day = `${pad(date.getDate())}/${pad(date.getMonth() + 1)}/${date.getFullYear()}`;
+
+  return `${time} ${day}`;
 }
