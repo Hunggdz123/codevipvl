@@ -31,7 +31,8 @@ form.addEventListener("submit", (event) => {
     return;
   }
 
-  showError("Không thể chuyển điểm: hệ thống xử lý chưa được kết nối.");
+  formMessage.textContent =
+    `Thông tin hợp lệ: tài khoản ${username}, ${points.toLocaleString("vi-VN")} điểm.`;
 });
 
 soundToggle.addEventListener("click", async () => {
