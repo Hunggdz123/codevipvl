@@ -310,6 +310,36 @@ input {
   display: none;
 }
 
+.result h1 {
+  margin: 20px 0 14px;
+  color: #ffe790;
+  font-size: 16px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.result-details {
+  margin: 0;
+  color: #ffe7c0;
+  font-size: 13px;
+}
+
+.result-details div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 222, 125, 0.1);
+}
+
+.result-details dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+  color: #fff3d4;
+  font-weight: 700;
+  text-align: right;
+}
+
 .promo-widget {
   position: fixed;
   z-index: 4;

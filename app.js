@@ -2,6 +2,11 @@ const form = document.querySelector("#convert-form");
 const usernameInput = document.querySelector("#username");
 const pointsInput = document.querySelector("#points");
 const formMessage = document.querySelector("#form-message");
+const result = document.querySelector("#result");
+const resultTitle = document.querySelector("#result-title");
+const resultUsername = document.querySelector("#result-username");
+const resultPoints = document.querySelector("#result-points");
+const backButton = document.querySelector("#back-button");
 const soundToggle = document.querySelector("#sound-toggle");
 const audio = document.querySelector("#background-audio");
 
@@ -31,8 +36,18 @@ form.addEventListener("submit", (event) => {
     return;
   }
 
-  formMessage.textContent =
-    `Thông tin hợp lệ: tài khoản ${username}, ${points.toLocaleString("vi-VN")} điểm.`;
+  resultUsername.textContent = username;
+  resultPoints.textContent = points.toLocaleString("vi-VN");
+  form.hidden = true;
+  result.hidden = false;
+  resultTitle.focus();
+});
+
+backButton.addEventListener("click", () => {
+  result.hidden = true;
+  form.hidden = false;
+  form.reset();
+  usernameInput.focus();
 });
 
 soundToggle.addEventListener("click", async () => {
